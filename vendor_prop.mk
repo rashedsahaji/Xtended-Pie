@@ -154,7 +154,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.iwlan.enable=true \
     persist.radio.VT_HYBRID_ENABLE=1
 
-# Media
+#Enable HAL3
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.HAL3.enabled=1
+
+#Enable stm-events
+>>>>>>> 0cdd676a... whyred: Enable HAL3
 PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.enable-player=true \
     media.stagefright.enable-http=true \
