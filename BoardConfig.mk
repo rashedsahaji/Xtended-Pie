@@ -52,10 +52,11 @@ BOARD_RAMDISK_OFFSET     := 0x01000000
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/xiaomi/sdm660
-TARGET_KERNEL_CONFIG := whyred-perf_defconfig
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-#TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_SOURCE := kernel/xiaomi/whyred
+TARGET_KERNEL_CONFIG := whyred_defconfig
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_CLANG_VERSION := 8.0.6
 
 # Partitions
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -75,6 +76,12 @@ TARGET_COPY_OUT_VENDOR := vendor
 TARGET_QCOM_AUDIO_VARIANT := caf-msm8998
 TARGET_QCOM_MEDIA_VARIANT := caf-msm8998
 TARGET_QCOM_DISPLAY_VARIANT := caf-msm8998
+
+# Declare soong namespace
+PRODUCT_SOONG_NAMESPACES += \
+    hardware/qcom/display-$(TARGET_QCOM_DISPLAY_VARIANT) \
+    hardware/qcom/audio-$(TARGET_QCOM_AUDIO_VARIANT) \
+    hardware/qcom/media-$(TARGET_QCOM_MEDIA_VARIANT)
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
@@ -195,7 +202,7 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-include vendor/omni/sepolicy/sepolicy.mk
+#include vendor/omni/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # QCOM TIME SERVICES
