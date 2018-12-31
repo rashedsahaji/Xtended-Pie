@@ -64,7 +64,7 @@ fi
 function set_density_by_fb() {
     #put default density based on width
     if [ -z $fb_width ]; then
-        setprop ro.sf.lcd_density 320
+        setprop ro.sf.lcd_density 428
     else
         if [ $fb_width -ge 1440 ]; then
            setprop ro.sf.lcd_density 560
