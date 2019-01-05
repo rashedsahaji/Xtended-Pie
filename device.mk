@@ -232,10 +232,11 @@ PRODUCT_PACKAGES += \
     libandroid_net \
     netutils-wrapper-1.0
 
-# FM
+#FM
 PRODUCT_PACKAGES += \
-    FMRadio \
-    libfmjni
+    FM2 \
+    libqcomfm_jni \
+    qcom.fmradio
 
 # Ramdisk
 PRODUCT_PACKAGES += \
