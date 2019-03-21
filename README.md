@@ -1,4 +1,4 @@
-Copyright 2018 - The Mokee Project
+Copyright 2018 - The Xtended Project
 
 The Redmi Note 5 (codenamed _"whyred"_) are high-end mid-range smartphones from Xiaomi.
 
